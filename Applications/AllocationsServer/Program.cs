@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Steeltoe.Extensions.Configuration.CloudFoundry;
-
+//using Steeltoe.Extensions.Configuration.CloudFoundry;
+using Pivotal.Extensions.Configuration.ConfigServer;
 namespace AllocationsServer
 {
     public class Program
@@ -18,7 +18,7 @@ namespace AllocationsServer
         public static IWebHostBuilder WebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                .UseCloudFoundryHosting()
-               .AddCloudFoundry()
+               .AddConfigServer()
                .UseStartup<Startup>();
     }
 }
